@@ -1,0 +1,163 @@
+/* Home Page Styling */
+.home-container {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .shop-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff8800;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .shop-btn:hover {
+    background-color: #cc7000;
+  }
+  
+  /* Featured Categories */
+  .featured-categories {
+    padding: 50px 20px;
+  }
+  
+  .featured-categories h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .categories-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .category-card {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .category-card:hover {
+    background-color: #388e3c;
+  }
+  .content {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.green-text {
+    color: #64b042;
+}
+
+.bold-text {
+    color: black;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Align buttons to the right */
+  }
+  
+  .green-button, .black-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .green-button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  .black-button {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  .green-button:hover {
+    background-color: #45a049;
+  }
+  
+  .black-button:hover {
+    background-color: #333;
+  }
+  
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    color: black;
+}
+
+.stats div {
+    font-size: 1.2rem;
+    font-weight: bold;
+}  
+.redirect-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+}

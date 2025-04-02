@@ -1,0 +1,118 @@
+.categories-container {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+}
+
+.categories-container h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.categories-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.categories-list {
+    display: flex;
+    gap: 45px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none;
+}
+
+.categories-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome */
+}
+
+.category-item {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 140px;
+}
+
+.category-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-item img {
+    width: 150px; /* Same width and height */
+    height: 150px;
+    border-radius: 40%; /* Ensures circular shape */
+    object-fit: cover;
+    border: 3px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.category-item img:hover {
+    transform: scale(1.1);
+}
+
+.category-item p {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 60px;
+    width: 40px; /* Adjust size */
+    height: 40px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.scroll-btn:hover {
+    background-color: #388e3c;
+}
+
+.scroll-btn.right {
+    right: 10px; /* Align to the rightmost side */
+}
+
+.scroll-btn.left {
+    right: 55px; /* Place to the left of the right button */
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.categories-header h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.view-all {
+    padding: 8px 15px;
+    font-size: 14px;
+    height: 40px;
+    color: white;
+    background-color: #4caf50;
+    border: none;   
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+    right: 100px; /* Space for scroll buttons */
+}
+
+.view-all:hover {
+    background-color: #388e3c;
+}
+
