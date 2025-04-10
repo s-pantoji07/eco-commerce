@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Categories.css";
+import "../Styles/Categories.css";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);

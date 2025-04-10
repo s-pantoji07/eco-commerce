@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
-import "../styles/Productcard.css";
+import "../Styles/Productcard.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

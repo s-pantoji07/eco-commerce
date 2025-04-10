@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUserOrders } from "../api/orderApi";
-import "../Styles/myorder.CSS"; // Assuming you have a CSS file for styling
+import "../Styles/myorder.css"; // Assuming you have a CSS file for styling
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
