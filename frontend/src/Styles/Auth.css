@@ -1,119 +1,263 @@
 .auth-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
+  display: flex;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.auth-content {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.auth-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.start-journey {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-button {
+  width: 100%;
+  background-color: #4a7dff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator span {
+  padding: 0 10px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.terms-container input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.terms-container label {
+  cursor: pointer;
+}
+
+.remember-forgot {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+
+.remember-forgot a {
+  color: #4a7dff;
+  text-decoration: none;
+}
+
+.toggle-auth {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.toggle-auth a {
+  color: #4a7dff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.toggle-auth a:hover {
+  color: #007bff;
+}
+
+.auth-background {
+  width: 50%;
+  background-image: url("https://img.freepik.com/premium-photo/woman-is-standing-shopping-cart-looking-her-phone_662214-570278.jpg?semt=ais_hybrid");
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.8),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(255, 255, 255, 0.6),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255, 255, 255, 0.7),
+      transparent 35%
+    );
+  z-index: 1;
+}
+
+.alert-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
-  
-  .auth-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    text-align: center;
+  100% {
+    opacity: 0;
   }
-  
-  .auth-container h2 {
-    margin-bottom: 1rem;
-  }
-  
-  form {
-    display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-page {
     flex-direction: column;
-    gap: 10px;
   }
-  
-  .input-group {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .input-group input {
-    flex: 1;
-  }
-  
-  input {
+
+  .auth-content {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 2rem 1rem;
   }
-  
-  .auth-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .google-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+
+  .auth-background {
     width: 100%;
-    margin-top: 10px;
+    height: 30vh;
+    order: -1;
   }
-  
-  .google-button img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .toggle-auth a {
-    color: black;
-    text-decoration: none;
-    
-    transition: color 0.3s ease;
-  }
-  
-  .toggle-auth a:hover {
-    color: #007bff;
-  }
-  
-  .terms-container {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Adjust the spacing between the checkbox and text */
-    font-size: 14px;
-  }
-  
-  .terms-container input {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-  }
-  
-  .terms-container label {
-    cursor: pointer;
-  }
-  
-  
-  .remember-forgot {
-    text-align: right;
-    font-size: 14px;
-  }
-  .alert-message {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    animation: fadeOut 3s ease-in-out forwards;
-  }
-  
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  
+}

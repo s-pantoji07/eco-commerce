@@ -77,8 +77,8 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="price">
-        <span className="original-price">${product?.price_before_discount?.toFixed(2) || "0.00"}</span>
-        <span className="discounted-price">${totalPrice.toFixed(2)}</span>
+        <span className="original-price">₹{product?.price_before_discount?.toFixed(2) || "0.00"}</span>
+        <span className="discounted-price">₹{totalPrice.toFixed(2)}</span>
         <span className="discount-tag">{product?.discount ?? 0}% OFF</span>
       </div>
 

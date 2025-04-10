@@ -7,25 +7,25 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>COMPANY NAME</h3>
-          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <h3>Oragnio</h3>
+          <p>Shop with Purpose. Sustain the Future</p>
         </div>
         
-        <div className="footer-section">
+        {/* <div className="footer-section">
           <h3>PRODUCTS</h3>
           <ul>
-            <li>MDBootstrap</li>
+            <li></li>
             <li>MDWordPress</li>
             <li>BrandFlow</li>
             <li>Bootstrap Angular</li>
           </ul>
-        </div>
+        </div> */}
         
         <div className="footer-section">
           <h3>USEFUL LINKS</h3>
           <ul>
             <li>Your Account</li>
-            <li>Become an Affiliate</li>
+            <li>About Us</li>
             <li>Shipping Rates</li>
             <li>Help</li>
           </ul>
@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>© 2020 Copyright: MDBootstrap.com</p>
+        <p>© 2025 Copyright: Oragnio.com</p>
         <div className="social-icons">
           <a href="#"><i className="fa fa-facebook-f"></i></a>
           <a href="#"><i className="fa fa-twitter"></i></a>

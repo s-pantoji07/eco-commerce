@@ -30,6 +30,7 @@ function MainLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const hideNavbarRoutes = ["/auth"];
+  const hideFooterRoutes = ["/auth"];
   const [cartTotal, setCartTotal] = useState(0); // State for total cart amount
 
   useEffect(() => {
@@ -75,7 +76,7 @@ function MainLayout() {
         {/* <Route path="/best-products" element={<BestProducts />} /> Add BestProducts route */}
         {/* Pass cartTotal as prop */}
       </Routes>
-      <Footer />
+      {!hideFooterRoutes.includes(location.pathname) && <Footer />} 
     </>
   );
 }
