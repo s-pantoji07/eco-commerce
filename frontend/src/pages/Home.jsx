@@ -39,7 +39,7 @@ const Home = () => {
             <span className="green-text">Organic</span> Foods at your <br />
             <span className="bold-text">Doorsteps</span>
           </h1>
-          <p>Dignissim massa diam elementum.</p>
+          <p>From Farm To Your Doorsteps!!</p>
           <div className="buttons">
             <button className="green-button" onClick={scrollToCategories}>
               START SHOPPING
