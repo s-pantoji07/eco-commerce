@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Categories.css";
-
+const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api";
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   const scrollRef = useRef(null);
@@ -10,7 +10,8 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/categories");
+        // const response = await fetch("http://localhost:5000/api/categories");
+        const response = await fetch(`${API_URL}/categories`);
         const data = await response.json();
         setCategories(data);
       } catch (error) {

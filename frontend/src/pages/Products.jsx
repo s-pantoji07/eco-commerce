@@ -6,7 +6,8 @@ import "../Styles/Products.css";
 const ProductCard = lazy(() => import("../components/ProductCard"));
 
 // API endpoint stored as a constant to avoid repetition
-const API_BASE_URL = "http://localhost:5000/api/products";
+// const API_BASE_URL = "http://localhost:5000/api/products";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/products` || "http://localhost:5000/api/products";
 
 const Products = () => {
   const [products, setProducts] = useState([]);

@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/cart"; // Adjust according to your backend URL
-const RECIPE_URL = "http://localhost:5000/api/recipes"; // New endpoint for recipes
+// const API_URL = "http://localhost:5000/api/cart"; 
+const API_URL = `${import.meta.env.VITE_API_URL}/cart`|| "http://localhost:5000/api/cart"; // Use environment variable or fallback to localhost
+const RECIPE_URL = "http://localhost:5000/api/recipes";
 
 export const addToCart = async (userId, productId, quantity) => {
   try {
@@ -34,7 +35,7 @@ export const removeFromCart = async (userId, itemId) => {
 };
 
 export const updateCartItem = async (userId, itemId, quantity) => {
-  const response = await fetch(`http://localhost:5000/api/cart/update/${userId}/${itemId}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/cart/update/${userId}/${itemId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

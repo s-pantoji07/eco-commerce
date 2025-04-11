@@ -4,7 +4,7 @@ import RecipeRecommendations from "../components/recipeRecommendations"; // Impo
 import "../Styles/Cart.css";
 import { removeFromCart } from "../api/cartApi";
 import { useNavigate } from "react-router-dom";
-
+const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api/cart";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,8 @@ const Cart = () => {
 
     const fetchCart = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/cart/${userId}`);
+        // const response = await fetch(`http://localhost:5000/api/cart/${userId}`);
+        const response = await fetch(`${API_URL}/cart/${userId}`);
         const data = await response.json();
 
         if (data.success && data.cart) {
@@ -57,7 +58,9 @@ const Cart = () => {
 
   const handleUpdate = async (itemId, newQuantity) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/cart/update/${userId}/${itemId}`, {
+      // const response = await fetch(`http://localhost:5000/api/cart/update/${userId}/${itemId}`,
+      const response = await fetch(`http://localhost:5000/api/cart/update/${userId}/${itemId}`,
+         {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: newQuantity }),

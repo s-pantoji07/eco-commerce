@@ -1,12 +1,13 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// const API_BASE_URL = "http://localhost:5000/api";
+const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api";
 
 export const placeOrder = async (orderData, token) => {
   try {
     if (!token) throw new Error("Authorization token is required");
 
-    const response = await axios.post(`${API_BASE_URL}/orders`, orderData, {
+    const response = await axios.post(`${API_URL}/orders`, orderData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

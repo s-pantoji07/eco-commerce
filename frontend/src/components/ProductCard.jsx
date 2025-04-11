@@ -4,7 +4,7 @@ import "../Styles/Productcard.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
+const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api";
 const ProductCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
@@ -39,7 +39,9 @@ const ProductCard = ({ product }) => {
     };
   
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/cart/add", {
+      // const response = await fetch("http://127.0.0.1:5000/api/cart/add",
+      const response = await fetch("${API_URL}/cart/add", // Use environment variable for API URL
+         {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

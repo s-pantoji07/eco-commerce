@@ -1,8 +1,10 @@
 import axios from "axios";
-
+const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api/cart";
 export const placeOrder = async (orderData) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/orders", orderData, {
+    // const response = await axios.post("http://localhost:5000/api/orders", orderData,
+    const response = await axios.post(`${API_URL}/orders`, orderData,
+       {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -15,7 +17,9 @@ export const placeOrder = async (orderData) => {
 };
 export const getUserOrders = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/api/orders", {
+    // const response = await axios.get("http://localhost:5000/api/orders",
+    const response = await axios.get(`${API_URL}/orders`, 
+       {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
