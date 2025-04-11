@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb+srv://sarveshmpantoji1354:spantoji07@cluster0.979t1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - JWT_SECRET=Sarvmangalam2k25
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
