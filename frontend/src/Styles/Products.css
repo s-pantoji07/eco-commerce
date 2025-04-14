@@ -145,6 +145,7 @@
     color: #d84315;
   }
   
+  
   /* Responsive Design */
   @media (max-width: 768px) {
     .products-list {

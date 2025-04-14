@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import "../Styles/Products.css";
-
+import ScrollToTopButton from "../components/ScrollToTopButton";
 // Lazy load ProductCard component
 const ProductCard = lazy(() => import("../components/ProductCard"));
 
@@ -130,6 +130,7 @@ const Products = () => {
     };
   }, [category, searchTerm, pageNumber, endReached]);
 
+  
   return (
     <div className="products-container">
       <h2>{category ? `Products in ${category}` : searchTerm ? `Search results for "${searchTerm}"` : "All Products"}</h2>
@@ -148,9 +149,10 @@ const Products = () => {
       
       {loading && !endReached && <p>Loading more products...</p>}
       
-      {!loading && endReached && products.length > 0 && <p>All products loaded.</p>}
+      {!loading && endReached && products.length > 0 && <p></p>}
       
       {error && <p>{error}</p>}
+      <ScrollToTopButton />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useRef, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import "../Styles/Home.css";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 // Lazy load categories component
 const Categories = lazy(() => import("../pages/Categories"));
@@ -59,14 +60,16 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      <ScrollToTopButton />
       {/* Categories Section - Lazy loaded */}
       <section ref={categoriesRef} className="categories">
         <Suspense fallback={<div>Loading categories...</div>}>
           <Categories />
         </Suspense>
       </section>
+      
     </div>
+    
   );
 };
 

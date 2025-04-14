@@ -4,6 +4,10 @@ import RecipeRecommendations from "../components/recipeRecommendations"; // Impo
 import "../Styles/Cart.css";
 import { removeFromCart } from "../api/cartApi";
 import { useNavigate } from "react-router-dom";
+import ScrollToTopButton from "../components/ScrollToTopButton";
+
+
+
 const API_URL = `${import.meta.env.VITE_API_URL}/api`|| "http://localhost:5000/api/cart";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -115,7 +119,9 @@ const Cart = () => {
         <button className="checkout-btn" onClick={() => navigate("/payment", { state: { cartTotal: totalAmount } })}>
           Proceed to Checkout
         </button>
+        <ScrollToTopButton />
       </div>
+      
     </div>
   );
 };

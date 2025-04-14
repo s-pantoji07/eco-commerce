@@ -5,7 +5,7 @@ import {
   Search,
   ChevronDown,
   User,
-  Bookmark,
+  Info ,
   ShoppingCart,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom"; // ✅ Import useNavigate
@@ -24,6 +24,13 @@ export default function Navbar() {
     e.preventDefault();
     // Navigate to products page with search query
     navigate(`/products?search=${searchTerm}`);
+  };
+
+  const handleCategoryClick = (categoryName) => {
+    // Close the menu
+    setMenuOpen(false);
+    // Navigate to products page with the category parameter
+    navigate(`/products?category=${categoryName}`);
   };
 
   return (
@@ -52,13 +59,27 @@ export default function Navbar() {
           {dropdownOpen && (
             <div className="absolute left-0 mt-2 bg-white text-black shadow-lg rounded-lg w-40">
               <ul className="p-2">
-                <li className="hover:bg-gray-100 p-2 cursor-pointer">
-                  Groceries
-                </li>
-                <li className="hover:bg-gray-100 p-2 cursor-pointer">Drinks</li>
-                <li className="hover:bg-gray-100 p-2 cursor-pointer">
-                  Chocolates
-                </li>
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Fruits and Vegetables");
+                }}
+              >
+                Fruits and Vegetables
+              </a>
+               
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Dairy and Eggs");
+                }}
+              >
+                Dairy 
+              </a>
               </ul>
             </div>
           )}
@@ -96,7 +117,7 @@ export default function Navbar() {
           onClick={() => navigate("/")}
           className="font-semibold hover:text-green-600"
         >
-          HOME
+          Home
         </button>
         <div className="relative">
           <button
@@ -113,7 +134,11 @@ export default function Navbar() {
           className="hover:text-green-600 cursor-pointer"
           onClick={() => navigate("/profile")}
         />
-        <Bookmark size={22} className="hover:text-green-600 cursor-pointer" />
+        <Info 
+         size={22} 
+         className="hover:text-green-600 cursor-pointer" 
+         onClick={() => navigate("/about")}
+        />
         <ShoppingCart
           size={22}
           className="hover:text-green-600 cursor-pointer"
@@ -136,89 +161,116 @@ export default function Navbar() {
         </div>
 
         {/* Sidebar Links */}
-        <ul className="p-4 space-y-4 text-gray-700">
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Fruits and Vegetables
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Dairy and Eggs
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Meat and Poultry
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Seafood
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Bakery and Bread
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Canned Goods
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Frozen Foods
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Pasta and Rice
-            </Link>
-          </li>
-          <li className="hover:bg-gray-100 p-2 cursor-pointer">
-            <Link
-              to="#"
-              className="block w-full h-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Breakfast Foods
-            </Link>
-          </li>
-        </ul>
+        <ul className="absolute z-10 w-64 p-4 space-y-4 text-gray-700 bg-white shadow-lg rounded-md">
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Fruits and Vegetables");
+                }}
+              >
+                Fruits and Vegetables
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Dairy and Eggs");
+                }}
+              >
+                Dairy and Eggs
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Meat and Poultry");
+                }}
+              >
+                Meat and Poultry
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Seafood");
+                }}
+              >
+                Seafood
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Bakery and Bread");
+                }}
+              >
+                Bakery and Bread
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Canned Goods");
+                }}
+              >
+                Canned Goods
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Frozen Foods");
+                }}
+              >
+                Frozen Foods
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Pasta and Rice");
+                }}
+              >
+                Pasta and Rice
+              </a>
+            </li>
+            <li className="hover:bg-gray-100 p-2 cursor-pointer">
+              <a 
+                href="#" 
+                className="block w-full h-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick("Breakfast Foods");
+                }}
+              >
+                Breakfast Foods
+              </a>
+            </li>
+          </ul>
       </div>
 
       {/* Background Overlay when menu is open */}

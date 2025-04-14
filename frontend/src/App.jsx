@@ -12,6 +12,7 @@ import MyOrders from "./components/myorder";
 import UserProfile from "./components/Profile";
 import Footer from "./components/Footer";
 import BestProducts from "./pages/BestProducts";
+import AboutUs from './pages/AboutUs';
 
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 const REDIRECT_DELAY = 5000; // 5 seconds
@@ -75,6 +76,7 @@ function MainLayout() {
         <Route path="/profile" element={<UserProfile />} />
         {/* <Route path="/best-products" element={<BestProducts />} /> Add BestProducts route */}
         {/* Pass cartTotal as prop */}
+        <Route path="/about" element={<AboutUs />} /> 
       </Routes>
       {!hideFooterRoutes.includes(location.pathname) && <Footer />} 
     </>
